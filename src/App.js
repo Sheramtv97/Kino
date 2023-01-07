@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import React, {useState} from "react";
+import {Routes,Route} from "react-router-dom";
+import Home from "./componoments/Home";
+import Meat from "./componoments/Meat";
+import Support from "./componoments/Support";
+import DetailCard from "./componoments/api/DetailCard";
+import ProfilActer from "./componoments/api/ProfilActer";
+import SearchResult from "./componoments/SearchResult";
+import Films from "./componoments/Films"
+
 
 function App() {
+    // const [node,setNode] = useState(JSON.parse(localStorage.getItem('node') || false))
+
+    // const chanGhe = () =>{
+    //     setNode(!node)
+    //     localStorage.setItem('node',JSON.stringify(!node))
+    // }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Routes>
+            <Route path={'/'} element={<Home/>}/>
+            <Route path={'/films'} element={<Films/>}/>
+            <Route path={'/meat'} element={<Meat/>}/>
+            <Route path={'/support'} element={<Support/>}/>
+            <Route path={'/movies/movies-detail/:myId'} element={<DetailCard/>}/>
+            <Route path={'/slid/:pro'} element={<ProfilActer/>}/>
+            <Route path={'/movie/search-result/:movieName'} element={<SearchResult/>}/>
+        </Routes>
     </div>
   );
 }

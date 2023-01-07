@@ -1,8 +1,13 @@
+@import "style/detail";
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;500;700;900&family=Varela+Round&display=swap');
+
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
+
 .container{
     width: 90%;
     margin: 0 auto;
@@ -10,13 +15,28 @@
 
 a{
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 10px;
     color: white;
 }
 
 #header{
     background: #181717;
-    padding: 20px 0;
+    padding: 15px 0;
+    .header{
+        .right-side{
+            .select-name{
+                outline: none;
+                padding: 7px 8px;
+                border-radius: 10px;
+                background: white;
+                color: black;
+                &_option{
+                    border-radius: 10px;
+                }
+            }
+
+        }
+    }
 }
 .header{
     display: flex;
@@ -40,8 +60,7 @@ a{
     background: transparent;
     border-radius: 20px;
     padding: 10px 20px;
-    margin: 0 20px;
-
+    margin: 0 10px;
 }
 .btn:hover{
     background: indigo;
@@ -49,27 +68,140 @@ a{
     border: 2px solid indigo;
 }
 .active{
-    color: green;
+    color: #3fc23f;
 }
 
 body{
-    background: #2a2828;
+    font-family: Montserrat,sans-serif ;
+    font-weight: 400;
+}
 
+#movies{
+    padding: 40px 0;
+    .movies{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .card{
+        margin: 20px;
+        width: 15vw;
+        &-title{
+            margin-left: 20px;
+        }
+        &-btn{
+            margin-left: 10px;
+            button{
+                outline: none;
+                border: 3px solid darkslategray;
+                padding: 10px 92px;
+                cursor: pointer;
+                color: white;
+                border-radius: 10px;
+                background: darkred;
+                transition: .4s;
+                &:hover{
+                    border: 3px solid darkred;
+                    color: black;
+                    background: #f6f5f8;
+                    transform: scale(1.1);
+                }
+            }
+
+        }
+    }
+}
+
+.but{
+    padding: 8px 15px;
+    outline: none;
+    border: 2px solid white;
+    background: #2a2828;
+    border-radius: 10px;
+    color: white;
+    transition: .4s;
+}
+
+.but:hover{
+    border: 2px solid white;
+    transform: scale(1.1);
+    background: #2a2828;
+    color: white;
+}
+
+.search-movie{
+    input{
+        outline: none;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 10px;
+    }
+    button{
+        outline: none;
+        border: none;
+        padding: 8px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #2d1852;
+        color: #f6f5f8;
+        margin: 0 5px;
+        transition: .4s;
+        &:active{
+            background: #f6f5f8;
+            color: black;
+        }
+    }
+}
+
+
+.page-btn{
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #2d1852;
+    color: #f6f5f8;
+    transition: .4s;
+    &:hover{
+        transform: scale(1.1);
+        background: #e0e049;
+        color: black;
+    }
 }
 
 
 
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 7%;
+    button{
+        padding: 5px 10px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #2d1852;
+        color: #f6f5f8;
+        transition: .4s;
+        margin: 0 10px;
+        &:hover{
+            transform: scale(1.1);
+            background: #e0e049;
+            color: black;
+        }
 
+    }
+    .active{
+        background: red;
+        color: #f6f5f8;
+    }
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
+#hom{
+    background: url("../src/img/header-bg.jpg") no-repeat center / cover;
+    min-height: 100vh;
+}

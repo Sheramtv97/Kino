@@ -1,11 +1,17 @@
 import React from 'react';
+import Header from "../Header";
+import Footer from "../Footer";
 
-const Layaut = () => {
+const Layout = ({children}) => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Header/>
+            <div>
+                {children}
+            </div>
+            <Footer/>
+        </>
     );
 };
 
-export default Layaut;
+export default Layout;

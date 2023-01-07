@@ -14,8 +14,10 @@ const Films = () => {
     const getPopular = async () => {
         const url = await axios(`https://api.themoviedb.org/3/movie/popular?api_key=${API}&language=${language}&page=${stran}`)
         const {data} = await url
+        setTimeout(() =>{
+            setPopular(data.results)
+        },1000)
         window.scroll(0,0)
-        await setPopular(data.results)
     }
 
     useEffect(() => {
